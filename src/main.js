@@ -59,7 +59,6 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-
     images.forEach(image => {
       const imageElement = document.createElement("img");
       imageElement.src = image.webformatURL;
@@ -69,7 +68,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const lightbox = new SimpleLightbox(".gallery a");
-    lightbox.refresh(); 
+      lightbox.refresh(); 
+      
+    console.log(images);
   }
 });
 
