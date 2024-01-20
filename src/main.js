@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
       galleryContainer.appendChild(imageElement);
     });
 
-    const lightbox = new SimpleLightbox(".gallery a");
+    const lightbox = new SimpleLightbox(".gallery img");
       lightbox.refresh(); 
       
     console.log(images);
