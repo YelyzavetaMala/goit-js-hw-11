@@ -74,3 +74,29 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+function createImageCard(img) {
+  const card = document.createElement('div');
+  card.className = 'image-card';
+
+  const link = document.createElement('a');
+  link.href = image.largeImageURL; 
+  link.setAttribute('data-lightbox', 'gallery');
+
+  const img = document.createElement('img');
+  img.src = image.webformatURL;
+  img.alt = image.tags;
+
+  link.appendChild(img);
+  card.appendChild(link);
+
+  const likes = document.createElement('span');
+  likes.textContent = `Likes: ${image.likes}`;
+
+  const views = document.createElement('span');
+  views.textContent = `Views: ${image.views}`;
+
+  card.appendChild(likes);
+  card.appendChild(views);
+
+  return card;
+}
