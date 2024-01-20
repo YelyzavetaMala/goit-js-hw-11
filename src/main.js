@@ -82,7 +82,6 @@ function createImageCard(img) {
   link.href = image.largeImageURL; 
   link.setAttribute('data-lightbox', 'gallery');
 
-  const img = document.createElement('img');
   img.src = image.webformatURL;
   img.alt = image.tags;
 
