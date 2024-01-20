@@ -5,15 +5,15 @@ import "simplelightbox/dist/simple-lightbox.esm"
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  const searchForm = document.getElementById("searchForm");
-  const galleryContainer = document.getElementById("gallery");
+  const searchForm = document.querySelector("#searchForm");
+  const galleryContainer = document.querySelector("gallery");
 
   searchForm.addEventListener("submit", handleFormSubmit);
 
   function handleFormSubmit(event) {
     event.preventDefault();
 
-    const searchQuery = document.getElementById("searchQuery").value;
+    const searchQuery = document.querySelector("#searchQuery").value;
     if (!searchQuery.trim()) {
       iziToast.error({
         title: "Error",
