@@ -26,8 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function fetchImages(searchQuery) {
-    const apiKey =  "41927432-a4c56e3ebe36f8f9b7d51fc62"  ;
-    const apiUrl = 'https://pixabay.com/api/?key=${apiKey}&q=${searchQuery}&image_type=photo&orientation=horizontal&safesearch=true';
+    const apiKey =  `41927432-a4c56e3ebe36f8f9b7d51fc62`  ;
+    const apiUrl = `https://pixabay.com/api/?key=${apiKey}&q=${searchQuery}&image_type=photo&orientation=horizontal&safesearch=true`;
 
     iziToast.info({
       title: "Loading",
