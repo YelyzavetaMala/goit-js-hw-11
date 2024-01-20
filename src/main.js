@@ -6,7 +6,7 @@ import "simplelightbox/dist/simple-lightbox.esm"
 
 document.addEventListener("DOMContentLoaded", () => {
   const searchForm = document.querySelector("#searchForm");
-  const galleryContainer = document.querySelector("gallery");
+  const galleryContainer = document.querySelector(".gallery");
 
   searchForm.addEventListener("submit", handleFormSubmit);
 
