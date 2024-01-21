@@ -1,12 +1,13 @@
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 import SimpleLightbox from "simplelightbox";
-import "simplelightbox/dist/simple-lightbox.esm"
+import "simplelightbox/dist/simple-lightbox.min.css";
 
 
 document.addEventListener("DOMContentLoaded", () => {
   const searchForm = document.querySelector("#searchForm");
   const galleryContainer = document.querySelector(".gallery");
+  const lightbox = new SimpleLightbox(".gallery a");
 
   searchForm.addEventListener("submit", handleFormSubmit);
 
@@ -60,21 +61,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     images.forEach(image => {
-      const imageElement = document.createElement("img");
-      imageElement.src = image.webformatURL;
-      imageElement.alt = image.tags;
-
-      galleryContainer.appendChild(imageElement);
+     const imageCard = createImageCard(image);
+     galleryContainer.appendChild(imageCard);
     });
 
-    const lightbox = new SimpleLightbox(".gallery img");
-      lightbox.refresh(); 
+    lightbox.refresh(); 
       
-    console.log(images);
+    
   }
 });
 
-function createImageCard(img) {
+function createImageCard(image) {
   const card = document.createElement('div');
   card.className = 'image-card';
 
@@ -82,6 +79,7 @@ function createImageCard(img) {
   link.href = image.largeImageURL; 
   link.setAttribute('data-lightbox', 'gallery');
 
+  const img = document.createElement('img');
   img.src = image.webformatURL;
   img.alt = image.tags;
 
