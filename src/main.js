@@ -84,17 +84,23 @@ function createImageCard(image) {
   img.src = image.webformatURL;
   img.alt = image.tags;
 
-  link.appendChild(img);
-  card.appendChild(link);
-
   const likes = document.createElement('span');
   likes.textContent = `Likes: ${image.likes}`;
 
   const views = document.createElement('span');
   views.textContent = `Views: ${image.views}`;
 
-  card.appendChild(likes);
-  card.appendChild(views);
+  const comments = document.createElement('span');
+  comments.textContent = `Comments: ${image.comments}`;
 
+  const downloads = document.createElement('span');
+  downloads.textContent = `Downloads: ${image.downloads}`;
+
+  link.appendChild(img);
+  link.appendChild(likes);
+  link.appendChild(views);
+  link.appendChild(comments);
+  link.appendChild(downloads);
+  card.appendChild(link);
   return card;
 }
